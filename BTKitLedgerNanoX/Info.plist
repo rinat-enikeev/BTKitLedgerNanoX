@@ -21,5 +21,13 @@
 			</array>
 		</dict>
 	</dict>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>Needed to read address from Nano X</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>Uses bluetooth to communicate with Ledger Nano X hardware wallet</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>bluetooth-central</string>
+	</array>
 </dict>
 </plist>

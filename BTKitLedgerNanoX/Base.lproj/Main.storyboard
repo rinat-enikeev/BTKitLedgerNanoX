@@ -1,24 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BTKitLedgerNanoX" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pIb-7l-9ib">
+                                <rect key="frame" x="47" y="437.5" width="320" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="I paired Nano X with iPhone using Ledger Live"/>
+                                <connections>
+                                    <action selector="pairedButtonTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kjj-vg-OaR"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VbT-W4-Csz">
+                                <rect key="frame" x="48.5" y="476" width="317" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="I opened Ethereum app on my Ledger Nano X"/>
+                                <connections>
+                                    <action selector="openedButtonTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Dki-TG-Ksm"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You address will be here" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fNg-Zr-6W5">
+                                <rect key="frame" x="8" y="385" width="398" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Zfb-hK-7tU">
+                                <rect key="frame" x="197" y="344" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EAI-ie-gkQ">
+                                <rect key="frame" x="142.5" y="515" width="129" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="READ ADDRESS"/>
+                                <connections>
+                                    <action selector="readButtonTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LAt-qb-saj"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pIb-7l-9ib" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="1HF-rf-Hex"/>
+                            <constraint firstItem="Zfb-hK-7tU" firstAttribute="centerX" secondItem="fNg-Zr-6W5" secondAttribute="centerX" id="4pU-oX-1dy"/>
+                            <constraint firstItem="EAI-ie-gkQ" firstAttribute="centerX" secondItem="VbT-W4-Csz" secondAttribute="centerX" id="DeR-s7-O4I"/>
+                            <constraint firstItem="fNg-Zr-6W5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="Euz-nz-px2"/>
+                            <constraint firstItem="pIb-7l-9ib" firstAttribute="top" secondItem="fNg-Zr-6W5" secondAttribute="bottom" constant="32" id="L1T-lm-imY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fNg-Zr-6W5" secondAttribute="trailing" constant="8" id="RN7-xU-cDQ"/>
+                            <constraint firstItem="fNg-Zr-6W5" firstAttribute="centerX" secondItem="pIb-7l-9ib" secondAttribute="centerX" id="RcB-SS-FxM"/>
+                            <constraint firstItem="VbT-W4-Csz" firstAttribute="top" secondItem="pIb-7l-9ib" secondAttribute="bottom" constant="7.5" id="bBI-Rg-3EC"/>
+                            <constraint firstItem="fNg-Zr-6W5" firstAttribute="top" secondItem="Zfb-hK-7tU" secondAttribute="bottom" constant="21" id="hNK-le-flN"/>
+                            <constraint firstItem="EAI-ie-gkQ" firstAttribute="top" secondItem="VbT-W4-Csz" secondAttribute="bottom" constant="8" symbolic="YES" id="lPK-Ui-8nA"/>
+                            <constraint firstItem="VbT-W4-Csz" firstAttribute="centerX" secondItem="pIb-7l-9ib" secondAttribute="centerX" id="mLE-zZ-IBH"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="Zfb-hK-7tU" id="rzr-rG-DXu"/>
+                        <outlet property="addressLabel" destination="fNg-Zr-6W5" id="m8i-xE-jzd"/>
+                        <outlet property="openedButton" destination="VbT-W4-Csz" id="yGx-ky-dZ5"/>
+                        <outlet property="pairedButton" destination="pIb-7l-9ib" id="WP0-qq-g6j"/>
+                        <outlet property="readButton" destination="EAI-ie-gkQ" id="wcQ-TJ-jq0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="20" y="98"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

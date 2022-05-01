@@ -1,0 +1,4 @@
+.idea
+*.xcodeproj
+.DS_Store
+**/Info.plist
