@@ -9,6 +9,9 @@ import UIKit
 import BTKit
 
 class ViewController: UIViewController {
+
+    @IBOutlet weak var progressLabel: UILabel!
+    
     @IBOutlet weak var addressLabel: UILabel!
 
     @IBOutlet weak var pairedButton: UIButton!
@@ -35,11 +38,31 @@ class ViewController: UIViewController {
             do {
                 self.readButton.isEnabled = false
                 self.activityIndicator.isHidden = false
+
+                let progress: ((BTServiceProgress) -> Void)? = { progress in
+                    switch progress {
+                    case .connecting:
+                        self.progressLabel.text = "connecting..."
+                    case .disconnecting:
+                        self.progressLabel.text = "disconnecting..."
+                    case .serving:
+                        self.progressLabel.text = "serving..."
+                    case .reading:
+                        self.progressLabel.text = "reading..."
+                    case .success:
+                        self.progressLabel.text = "success"
+                    case let .failure(error):
+                        self.progressLabel.text = error.localizedDescription
+                    }
+                }
+
+                // this is core methods
                 let nanoX = try await ledger.first(self)
-                let address = try await nanoX.address(self)
+                let address = try await nanoX.address(self, progress: progress)
+
                 self.addressLabel.text = address.address
                 self.activityIndicator.isHidden = true
-                self.readButton.isEnabled = false
+                self.readButton.isEnabled = true
             } catch {
                 self.activityIndicator.isHidden = true
                 self.readButton.isEnabled = true
