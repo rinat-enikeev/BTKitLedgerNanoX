@@ -14,6 +14,7 @@
 		0EB0FFE3281EAE5E005E42D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EB0FFE2281EAE5E005E42D4 /* Assets.xcassets */; };
 		0EB0FFE6281EAE5E005E42D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EB0FFE4281EAE5E005E42D4 /* LaunchScreen.storyboard */; };
 		0EDEB62D2820539000EA4608 /* BTKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0EDEB62C2820539000EA4608 /* BTKit */; };
+		0EDEB6302820648800EA4608 /* BTKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0EDEB62F2820648800EA4608 /* BTKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,7 +27,6 @@
 		0EB0FFE5281EAE5E005E42D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0EB0FFE7281EAE5E005E42D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0EB0FFF0281EC1D7005E42D4 /* BTKitLedgerNanoX.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BTKitLedgerNanoX.entitlements; sourceTree = "<group>"; };
-		0EDEB62A2820537600EA4608 /* BTKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = BTKit; path = ../../Documents/GitHub/BTKit; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +35,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EDEB62D2820539000EA4608 /* BTKit in Frameworks */,
+				0EDEB6302820648800EA4608 /* BTKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,7 +78,6 @@
 		0EB0FFF1282052E5005E42D4 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				0EDEB62A2820537600EA4608 /* BTKit */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -107,6 +107,7 @@
 			name = BTKitLedgerNanoX;
 			packageProductDependencies = (
 				0EDEB62C2820539000EA4608 /* BTKit */,
+				0EDEB62F2820648800EA4608 /* BTKit */,
 			);
 			productName = BTKitLedgerNanoX;
 			productReference = 0EB0FFD6281EAE5C005E42D4 /* BTKitLedgerNanoX.app */;
@@ -137,6 +138,7 @@
 			);
 			mainGroup = 0EB0FFCD281EAE5C005E42D4;
 			packageReferences = (
+				0EDEB62E2820648800EA4608 /* XCRemoteSwiftPackageReference "BTKit" */,
 			);
 			productRefGroup = 0EB0FFD7281EAE5C005E42D4 /* Products */;
 			projectDirPath = "";
@@ -390,9 +392,25 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		0EDEB62E2820648800EA4608 /* XCRemoteSwiftPackageReference "BTKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rinat-enikeev/BTKit";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		0EDEB62C2820539000EA4608 /* BTKit */ = {
 			isa = XCSwiftPackageProductDependency;
+			productName = BTKit;
+		};
+		0EDEB62F2820648800EA4608 /* BTKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0EDEB62E2820648800EA4608 /* XCRemoteSwiftPackageReference "BTKit" */;
 			productName = BTKit;
 		};
 /* End XCSwiftPackageProductDependency section */
